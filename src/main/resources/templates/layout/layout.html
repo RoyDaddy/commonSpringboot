@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="_csrf" content="${_csrf.token}" />
+	<meta name="_csrf_header" content="${_csrf.headerName}" />
+    <title layout:title-pattern="$LAYOUT_TITLE : $CONTENT_TITLE">공통프로젝트</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport" />
+    
+    
+    <!-- plugins start -->
+    
+    <!-- plugins end -->
+    
+    <!-- CSS start -->
+    
+    <!-- CSS end -->
+</head>
+<body>
+	<!-- JS start -->
+    
+	<!-- JS end -->
+	
+	<div class="wrap">
+	   	<!-- Header start -->
+	    <th:block th:replace="/layout/header"></th:block>
+	   	<!-- Header end -->
+	   	
+	   	<!-- content start -->
+	    <th:block layout:fragment="content"></th:block>
+	    <!-- content end -->
+	    
+	    <!-- footer start -->
+	    <th:block th:replace="/layout/footer"></th:block>
+	    <!-- footer end -->
+    </div>
+</body>
+</html>
