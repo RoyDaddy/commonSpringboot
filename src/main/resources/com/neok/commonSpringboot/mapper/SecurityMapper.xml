@@ -7,6 +7,6 @@
 		select 'ROLE_TEMP_2' auth,
 				'test' username,
 				'test' password
-		from dual;
+		from dual
 	</select>
 </mapper>

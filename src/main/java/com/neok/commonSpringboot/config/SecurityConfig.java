@@ -43,14 +43,24 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     public void configure(WebSecurity web) throws Exception {
         // static 디렉터리의 하위 파일 목록은 인증 무시 ( = 항상통과 )
-        web.ignoring().antMatchers("/assets/**","/css/**", "/js/**", "/images/**", "/lib/**", "/plugins/**", "/bootstrap/**", "/jquery/**");
+        web.ignoring().antMatchers("/assets/**",
+				"/css/**",
+				"/js/**",
+				"/images/**",
+				"/lib/**",
+				"/plugins/**",
+				"/bootstrap/**",
+				"/jquery/**",
+				"/img/**",
+				"/vendor/**",
+				"/scss/**");
     }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
     	http.csrf().disable();
         http.authorizeRequests()
-        		.antMatchers("/login", "/signup").permitAll()	// 언제나허용
+        		.antMatchers("/login", "/signup", "/main").permitAll()	// 언제나허용
 				.antMatchers("/admin/**").access("ROLE_TEMP_1")	// /admin/** 경로는 ROLE_TEMP_1 권한이있어야 사용가능
 				.antMatchers("/**").authenticated() // /** 모든경로는 로그인시에 사용가능
             .and() // 로그인 설정

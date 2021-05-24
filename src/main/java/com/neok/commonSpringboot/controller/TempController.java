@@ -14,9 +14,9 @@ public class TempController {
 	@Autowired
 	Environment env;
 	
-	@RequestMapping("/temp")
+	@RequestMapping("/main")
 	public String temp() {
-		env.getProperty("temp");
-		return "/content/temp";
+		env.getProperty("main");
+		return "/content/main";
 	}
 }
