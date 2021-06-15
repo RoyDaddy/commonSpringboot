@@ -2,11 +2,13 @@ package com.neok.commonSpringboot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.annotation.PropertySources;
-import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 //@EnableScheduling
+@EnableJpaAuditing
 @PropertySources({
 	@PropertySource("classpath:/properties/temp.properties"),
 })

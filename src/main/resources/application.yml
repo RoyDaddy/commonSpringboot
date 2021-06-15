@@ -21,9 +21,9 @@ spring:
     
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/dh?autoReconnect=true&useSSL=false&serverTimezone=UTC
-    username: 'user'
-    password: 'user'
+    url: jdbc:mysql://leaders-developdb.cko98dkl5suj.ap-northeast-2.rds.amazonaws.com:3306/dh?autoReconnect=true&useSSL=false&serverTimezone=UTC
+    username: 'leaders'
+    password: '!Leaders34'
     
   servlet:
     multipart:
@@ -39,8 +39,16 @@ spring:
         smtp: 
           auth: true
           starttls:
-            enable: true 
-    
+            enable: true
+
+  jpa:
+    properties:
+      hibernate:
+        show-sql: true
+        format_sql: true
+        use_sql_comments: true
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+
 file:
   uploadDir: C:/file_storage
 

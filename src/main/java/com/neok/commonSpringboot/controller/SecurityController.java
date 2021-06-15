@@ -16,9 +16,9 @@ public class SecurityController {
 	public String loginPage() {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		if(auth.getAuthorities().contains(new SimpleGrantedAuthority(Role.ROLE_LOGIN.getValue()))) {
-			return "redirect:/";
+			return "redirect:/main";
 		}else {
-			return "/login";
+			return "login";
 		}
 	}
 }

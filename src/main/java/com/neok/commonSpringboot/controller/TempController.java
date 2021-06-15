@@ -14,6 +14,11 @@ public class TempController {
 	@Autowired
 	Environment env;
 	
+	@RequestMapping("/")
+	public String index() {
+		return "redirect:/main";
+	}
+
 	@RequestMapping("/main")
 	public String temp() {
 		env.getProperty("main");
